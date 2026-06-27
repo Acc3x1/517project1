@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.iso11820.ui.CalibrationController"
+      spacing="10">
+
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <HBox spacing="20" alignment="CENTER_LEFT">
+        <Label text="校准温度:" styleClass="temp-name"/>
+        <Label fx:id="lblCalTemp" text="25.0 °C" styleClass="temp-value"/>
+        <ComboBox fx:id="cmbCalType" prefWidth="100"/>
+        <Button fx:id="btnRecord" text="记录" onAction="#onRecord"/>
+        <Button fx:id="btnSave" text="保存" onAction="#onSave"/>
+    </HBox>
+
+    <VBox spacing="5">
+        <Label text="温度点记录:"/>
+        <TextField fx:id="txtTempPoint" promptText="点击记录按钮采集温度点"/>
+    </VBox>
+
+    <VBox spacing="5">
+        <Label text="备注:"/>
+        <TextArea fx:id="txtRemarks" prefHeight="80"/>
+    </VBox>
+
+    <TableView fx:id="tableHistory" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colDate" text="校准日期" prefWidth="150"/>
+            <TableColumn fx:id="colType" text="类型" prefWidth="100"/>
+            <TableColumn fx:id="colOperator" text="操作员" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

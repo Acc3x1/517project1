@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.iso11820.ui.QueryController"
+      spacing="10">
+
+    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+    <HBox spacing="15" alignment="CENTER_LEFT">
+        <DatePicker fx:id="dpFromDate" promptText="开始日期"/>
+        <DatePicker fx:id="dpToDate" promptText="结束日期"/>
+        <TextField fx:id="txtProductId" promptText="样品编号" prefWidth="150"/>
+        <ComboBox fx:id="cmbOperator" prefWidth="100"/>
+        <Button fx:id="btnQuery" text="查询" onAction="#onQuery"/>
+        <Button fx:id="btnExport" text="导出" onAction="#onExport"/>
+    </HBox>
+
+    <TableView fx:id="tableRecords" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colTestId" text="试验编号" prefWidth="150"/>
+            <TableColumn fx:id="colProductId" text="样品编号" prefWidth="100"/>
+            <TableColumn fx:id="colDate" text="试验日期" prefWidth="100"/>
+            <TableColumn fx:id="colOperator" text="操作员" prefWidth="70"/>
+            <TableColumn fx:id="colDuration" text="时长(秒)" prefWidth="70"/>
+            <TableColumn fx:id="colPostWeight" text="试验后质量" prefWidth="90"/>
+            <TableColumn fx:id="colLostRate" text="失重率" prefWidth="70"/>
+            <TableColumn fx:id="colStatus" text="状态" prefWidth="60"/>
+        </columns>
+    </TableView>
+</VBox>

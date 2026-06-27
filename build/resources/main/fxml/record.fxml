@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.iso11820.ui.RecordController"
+      spacing="12">
+
+    <padding>
+        <Insets top="15" right="25" bottom="15" left="25"/>
+    </padding>
+
+    <Label text="试验记录保存" styleClass="dialog-title"/>
+
+    <!-- 自动生成按钮 -->
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button fx:id="btnAutoGenerate" text="🔬 自动生成现象数据" onAction="#onAutoGenerate" prefWidth="200"/>
+        <Label text="（仿真系统无真实样品，自动填入合理的试验结果）" style="-fx-text-fill: gray; -fx-font-size: 11;"/>
+    </HBox>
+
+    <GridPane hgap="8" vgap="6">
+        <Label text="试验前质量:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Label fx:id="lblPreWeight" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Label text="试验后质量(g):" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtPostWeight" promptText="必填（或点自动生成）" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label text="失重量:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Label fx:id="lblLostWeight" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label text="失重率:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Label fx:id="lblLostWeightPer" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Label text="温升(°C):" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <Label fx:id="lblDeltaT" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+        <CheckBox fx:id="chkFlame" text="出现持续火焰" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2"/>
+        <Label text="火焰发生时刻(秒):" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+        <TextField fx:id="txtFlameTime" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+        <Label text="火焰持续时间(秒):" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+        <TextField fx:id="txtFlameDuration" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+    </GridPane>
+
+    <VBox spacing="3">
+        <Label text="备注:"/>
+        <TextArea fx:id="txtMemo" prefHeight="50" maxHeight="80"/>
+    </VBox>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="btnSave" text="✅ 保存记录" onAction="#onSave" prefWidth="140" style="-fx-font-weight: bold; -fx-base: #4a90d9;"/>
+        <Button fx:id="btnCancel" text="取消" onAction="#onCancel" prefWidth="100"/>
+    </HBox>
+</VBox>

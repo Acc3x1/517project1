@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.iso11820.ui.LoginController"
+      spacing="20" alignment="CENTER" styleClass="login-container">
+
+    <padding>
+        <Insets top="30" right="40" bottom="30" left="40"/>
+    </padding>
+
+    <Label text="ISO 11820 建筑材料不燃性试验仿真系统" styleClass="title-label"/>
+
+    <Label text="登录" styleClass="subtitle-label"/>
+
+    <VBox spacing="10">
+        <Label text="选择角色:"/>
+        <HBox spacing="20">
+            <RadioButton fx:id="rbAdmin" text="管理员"/>
+            <RadioButton fx:id="rbExperimenter" text="试验员"/>
+        </HBox>
+    </VBox>
+
+    <VBox spacing="10">
+        <Label text="密码:"/>
+        <PasswordField fx:id="txtPassword" promptText="请输入密码" prefWidth="200"/>
+    </VBox>
+
+    <Button fx:id="btnLogin" text="登录" onAction="#onLogin" styleClass="login-button" prefWidth="200"/>
+
+    <Label fx:id="lblMessage" styleClass="error-label"/>
+
+</VBox>

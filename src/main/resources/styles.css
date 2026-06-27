@@ -1,0 +1,256 @@
+/* ISO 11820 建筑材料不燃性试验仿真系统 - CSS 样式 */
+
+/* 基础样式 */
+.root {
+    -fx-font-family: "Microsoft YaHei", "SimHei", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5f5f5;
+}
+
+/* 登录界面 */
+.login-container {
+    -fx-background-color: linear-gradient(to bottom, #2c3e50, #3a5a7a);
+    -fx-padding: 30;
+    -fx-spacing: 20;
+}
+
+.title-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ecf0f1;
+}
+
+.login-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: #2ecc71;
+}
+
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 12px;
+}
+
+/* 主界面 */
+.main-container {
+    -fx-background-color: #ecf0f1;
+}
+
+.header-bar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 10;
+}
+
+.info-label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}
+
+.status-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5 15;
+    -fx-background-color: #3498db;
+    -fx-background-radius: 5;
+}
+
+.timer-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* 温度显示面板 */
+.temp-panel {
+    -fx-background-color: white;
+    -fx-padding: 15;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+.temp-name {
+    -fx-font-size: 12px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.temp-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-font-family: "Consolas", monospace;
+}
+
+/* 按钮栏 */
+.button-bar {
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* 对话框 */
+.dialog-container {
+    -fx-background-color: white;
+    -fx-padding: 20;
+}
+
+.dialog-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 15 0;
+}
+
+/* 表格 */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: white;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* 曲线图 */
+.chart {
+    -fx-background-color: white;
+}
+
+.chart-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 14px;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.axis-label {
+    -fx-text-fill: #7f8c8d;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 2px;
+}
+
+.series0-line { -fx-stroke: #e74c3c; } /* 炉温1 - 红色 */
+.series1-line { -fx-stroke: #3498db; } /* 炉温2 - 蓝色 */
+.series2-line { -fx-stroke: #27ae60; } /* 表面温 - 绿色 */
+.series3-line { -fx-stroke: #9b59b6; } /* 中心温 - 紫色 */
+
+/* 文本区域 */
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5;
+    -fx-font-family: "Consolas", monospace;
+}
+
+/* TabPane */
+.tab-pane {
+    -fx-border-color: #bdc3c7;
+}
+
+.tab-pane .tab-header-area {
+    -fx-background-color: #2c3e50;
+}
+
+.tab {
+    -fx-background-color: #34495e;
+    -fx-text-fill: #ecf0f1;
+}
+
+.tab:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* 输入框 */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+    -fx-padding: 5;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+}
+
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+}
+
+/* 标签 */
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* 滚动条 */
+.scroll-bar {
+    -fx-background-color: #bdc3c7;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #95a5a6;
+}
+
+/* 菜单 */
+.menu-bar {
+    -fx-background-color: #2c3e50;
+}
+
+.menu-item {
+    -fx-background-color: white;
+    -fx-text-fill: #2c3e50;
+}
+
+.menu-item:hover {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}

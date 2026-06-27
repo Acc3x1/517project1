@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.iso11820.ui.NewTestController"
+      spacing="15" styleClass="dialog-container">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <Label text="新建试验" styleClass="dialog-title"/>
+
+    <TabPane tabClosingPolicy="UNAVAILABLE">
+
+        <Tab text="样品信息">
+            <GridPane hgap="10" vgap="10">
+                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+                <Label text="样品编号:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtProductId" promptText="如: 20240613-001" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="样品名称:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtProductName" promptText="如: 岩棉隔热板" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="规格型号:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtSpecific" promptText="如: 100×50×25mm" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="直径(mm):" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtDiameter" promptText="如: 50" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="高度(mm):" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <TextField fx:id="txtHeight" promptText="如: 25" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            </GridPane>
+        </Tab>
+
+        <Tab text="试验参数">
+            <GridPane hgap="10" vgap="10">
+                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+                <Label text="环境温度(°C):" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="txtAmbTemp" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="环境湿度(%):" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtAmbHumi" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="试验前质量(g):" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtPreWeight" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="试验时长:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <ComboBox fx:id="cmbDuration" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="操作员:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <Label fx:id="lblOperator" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            </GridPane>
+        </Tab>
+
+        <Tab text="设备信息">
+            <GridPane hgap="10" vgap="10">
+                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+                <Label text="设备编号:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <Label fx:id="lblApparatusId" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="设备名称:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <Label fx:id="lblApparatusName" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="检定日期:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label fx:id="lblCheckDate" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+        </Tab>
+    </TabPane>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="btnCreate" text="创建试验" onAction="#onCreate" prefWidth="120"/>
+        <Button fx:id="btnCancel" text="取消" onAction="#onCancel" prefWidth="120"/>
+    </HBox>
+</VBox>

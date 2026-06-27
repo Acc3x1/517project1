@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.iso11820.ui.SettingsController"
+      spacing="15" styleClass="dialog-container">
+
+    <padding>
+        <Insets top="20" right="30" bottom="20" left="30"/>
+    </padding>
+
+    <Label text="参数设置" styleClass="dialog-title"/>
+
+    <GridPane hgap="10" vgap="10">
+        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+        <Label text="目标温度(°C):" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="txtTargetTemp" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="升温速度(°C/s):" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="txtHeatingRate" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="温度波动:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="txtFluctuation" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="稳定阈值(°C):" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="txtStableThreshold" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="试验时长(秒):" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <TextField fx:id="txtDuration" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    </GridPane>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="btnSave" text="保存" onAction="#onSave" prefWidth="120"/>
+        <Button fx:id="btnCancel" text="取消" onAction="#onCancel" prefWidth="120"/>
+    </HBox>
+</VBox>
