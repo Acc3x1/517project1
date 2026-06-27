@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.iso11820.ui.MainController"
+      spacing="10" styleClass="main-container">
+
+    <!-- 顶部信息栏 -->
+    <HBox spacing="20" alignment="CENTER_LEFT" styleClass="header-bar">
+        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        <Label fx:id="lblOperator" styleClass="info-label"/>
+        <Label fx:id="lblProductId" text="样品编号: -" styleClass="info-label"/>
+        <Label fx:id="lblStatus" text="空闲" styleClass="status-label"/>
+        <Label fx:id="lblTimer" text="0" styleClass="timer-label"/>
+        <Label fx:id="lblDrift" text="-- °C/10min" styleClass="info-label"/>
+        <Button text="导出Excel" onAction="#onExportExcel"/>
+    </HBox>
+
+    <!-- TabPane -->
+    <TabPane fx:id="tabPane" VBox.vgrow="ALWAYS">
+
+        <!-- 试验控制Tab -->
+        <Tab fx:id="tabTest" text="试验控制" closable="false">
+            <VBox spacing="10">
+                <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+                <!-- 温度显示面板 -->
+                <HBox spacing="30" alignment="CENTER" styleClass="temp-panel">
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label text="炉温1" styleClass="temp-name"/>
+                        <Label fx:id="lblTf1" text="25.0 °C" styleClass="temp-value"/>
+                    </VBox>
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label text="炉温2" styleClass="temp-name"/>
+                        <Label fx:id="lblTf2" text="25.0 °C" styleClass="temp-value"/>
+                    </VBox>
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label text="表面温度" styleClass="temp-name"/>
+                        <Label fx:id="lblTs" text="25.0 °C" styleClass="temp-value"/>
+                    </VBox>
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label text="中心温度" styleClass="temp-name"/>
+                        <Label fx:id="lblTc" text="25.0 °C" styleClass="temp-value"/>
+                    </VBox>
+                    <VBox spacing="5" alignment="CENTER">
+                        <Label text="校准温度" styleClass="temp-name"/>
+                        <Label fx:id="lblTCal" text="25.0 °C" styleClass="temp-value"/>
+                    </VBox>
+                </HBox>
+
+                <!-- 控制按钮 -->
+                <HBox spacing="15" alignment="CENTER" styleClass="button-bar">
+                    <Button fx:id="btnNewTest" text="新建试验" onAction="#onNewTest" prefWidth="100"/>
+                    <Button fx:id="btnStartHeating" text="开始升温" onAction="#onStartHeating" prefWidth="100"/>
+                    <Button fx:id="btnStopHeating" text="停止升温" onAction="#onStopHeating" prefWidth="100"/>
+                    <Button fx:id="btnStartRecord" text="开始记录" onAction="#onStartRecord" prefWidth="100"/>
+                    <Button fx:id="btnStopRecord" text="停止记录" onAction="#onStopRecord" prefWidth="100"/>
+                    <Button fx:id="btnRecord" text="试验记录" onAction="#onRecord" prefWidth="100"/>
+                    <Button fx:id="btnSettings" text="参数设置" onAction="#onSettings" prefWidth="100"/>
+                </HBox>
+
+                <!-- 温度曲线图 -->
+                <LineChart fx:id="chartTemp" title="温度曲线" VBox.vgrow="ALWAYS">
+                    <xAxis><NumberAxis fx:id="xAxis" label="时间(秒)"/></xAxis>
+                    <yAxis><NumberAxis fx:id="yAxis" label="温度(°C)"/></yAxis>
+                </LineChart>
+
+                <!-- 系统消息日志 -->
+                <VBox spacing="5">
+                    <Label text="系统消息:"/>
+                    <TextArea fx:id="txtLog" editable="false" prefHeight="100"/>
+                </VBox>
+            </VBox>
+        </Tab>
+
+        <!-- 记录查询Tab -->
+        <Tab fx:id="tabQuery" text="记录查询" closable="false">
+            <fx:include fx:id="queryView" source="query.fxml"/>
+        </Tab>
+
+        <!-- 设备校准Tab -->
+        <Tab fx:id="tabCalibration" text="设备校准" closable="false">
+            <fx:include fx:id="calibrationView" source="calibration.fxml"/>
+        </Tab>
+    </TabPane>
+</VBox>
